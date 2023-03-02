@@ -14,23 +14,30 @@
         <nav class="navigation">
             <a href="#overview">Overview</a>
             <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
     <section class="main" id="overview">
-        <div>
+        <div class="container">
             <h2>Hello, I'm Nada <br><span>Software Engineer</span></h2>
             <h3>I build responsive web applications</h3>
+            <div class="about">I have 2 years experience in building scalable, maintainable and responsive 
+                frontend web applications using HTML5, CSS3, Javascript ES6 and React.js.
+                I'm passionate about learning new technologies and 
+                applying my skills with a larger development team.
+            </div>
             <a href="#projects" class="main-btn">view my projects</a>
             <div class="social-icons">
                 <a href="https://github.com/Nada-Zaki" target="_blank"><i class="fa-brands fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/nada-mohamed-3b53211a5/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
             </div>
         </div>
+        <img src="images/me.JPG" class="profile" alt="my profile pic"/>
     </section>
     <section class="projects" id="projects">
         <h2 class="title">Projects</h2>
-        <div class="content">
+        <div class="content container">
             <div class="card">
                 <img src="images/e_commerce.JPG" alt="e-commerce screenshot">
                 <h3>E-commerce Website</h3>
@@ -38,7 +45,10 @@
                     login, add items to a wishlist, and buying items using React.js, redux toolkit,
                     CSS3 and a fake api to fetch the products.
                 </p>
-                <a href="https://e-commerce-zeta-beryl.vercel.app/" class="more_details" target="_blank">More Details</a>
+                <div class="icons">
+                    <a href="https://github.com/Nada-Zaki/E-commerce" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://e-commerce-zeta-beryl.vercel.app/" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                </div>
             </div>
             <div class="card">
                 <img src="images/food_app.PNG" alt="food app screenshot">
@@ -46,7 +56,10 @@
                 <p>It is a web application that allows the user to view the available meals and add the 
                     meals to the cart using Firebase and React.js.
                 </p>
-                <a href="https://food-78pei1yb3-nada-zaki.vercel.app/" class="more_details" target="_blank">More Details</a>
+                <div class="icons">
+                    <a href="https://github.com/Nada-Zaki/food_app" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://food-78pei1yb3-nada-zaki.vercel.app/" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                </div>
             </div>
             <div class="card">
                 <img src="images/quiz_app.JPG" alt="quiz app screenshot">
@@ -54,7 +67,10 @@
                 <p>It is a responsive quiz app that has three categories of questions fetched from firebase using
                     HTML5, CSS3 and vanilla JavaScript.
                 </p>
-                <a href="https://mellow-frangipane-862374.netlify.app/" class="more_details" target="_blank">More Details</a>
+                <div class="icons">
+                    <a href="https://github.com/Nada-Zaki/Quiz-App" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://mellow-frangipane-862374.netlify.app/" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                </div>
             </div>
             <div class="card">
                 <img src="images/coffee_website.PNG" alt="coffee website screenshot">
@@ -62,26 +78,72 @@
                 <p>It is a web UI that shows the coffee products that fetched from the api using
                     HTML5, CSS3 and vanilla JavaScript.
                 </p>
-                <a href="https://strong-druid-be7053.netlify.app/" class="more_details" target="_blank">More Details</a>
+                <div class="icons">
+                    <a href="https://github.com/Nada-Zaki/Coffee-Website" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://strong-druid-be7053.netlify.app/" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                </div>
+        </div>
+    </section>
+    <section class="skills" id="skills">
+        <h2 class="title">Skills</h2>
+        <div class="content container">
+            <div class="skill-container html">
+                <img src="images/html.png"/>
+                <p>HTML</p>
+            </div>
+            <div class="skill-container css">
+                <img src="images/css.png"/>
+                <p>CSS</p>
+            </div>
+            <div class="skill-container bootstrap">
+                <img src="images/bootstrap.png"/>
+                <p>Bootstrap</p>
+            </div>
+            <div class="skill-container js">
+                <img src="images/javascript.png"/>
+                <p>Javascript</p>
+            </div>
+            <div class="skill-container react">
+                <img src="images/react.png" />
+                <p>REACT</p>
+            </div>
+            <div class="skill-container redux">
+                <img src="images/redux.png" />
+                <p>Redux</p>
+            </div>
+            <div class="skill-container git">
+                <img src="images/git.png"/>
+                <p>Git</p>
+            </div>
+            <div class="skill-container node">
+                <img src="images/node.png"/>
+                <p>Node.js</p>
+            </div>
+            <div class="skill-container express">
+                <img src="images/express.png"/>
+                <p>Express.js</p>
             </div>
         </div>
     </section>
-    <section class="cards contact" id="contact">
-        <h2 class="title">Let's work together</h2>
-        <div class="content">
-            <div class="card">
-                <div class="icon"><i class="fa-solid fa-phone"></i></div>
-                <div class="info">
-                    <h3>Phone</h3>
-                    <p>+201015945936</p>
+    <section class="contact" id="contact">
+        <h2 class="title">Get IN Touch</h2>
+        <div class="container contact-container">
+            <div class="contact-info">
+                <p><i class="fa-solid fa-envelope"></i>nadazaki840@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i>+43 660 4289046</p>
+                <div class="social-icons">
+                    <a href="https://github.com/Nada-Zaki" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/nada-mohamed-3b53211a5/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
+                <a download href="images/Nada_Mohamed-CV.pdf" class="main-btn btn" target="_blank" >Download CV</a>
             </div>
-            <div class="card">
-                <div class="icon"><i class="fa-solid fa-envelope"></i></i></div>
-                <div class="info">
-                    <h3>Email</h3>
-                    <p>nadazaki840@gmail.com</p>
-                </div>
+            <div class="form-container">
+                <form action="https://email-sender-api-wnqj-82s27mlyc-nada-zaki.vercel.app/contact" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required/>
+                    <input type="email" name="email" placeholder="Your Email" required />
+                    <textarea name="message" rows="6" placeholder="Your Message"></textarea>
+                    <input type="submit" />
+                </form>
             </div>
         </div>
     </section>
@@ -92,5 +154,7 @@
             <a href="https://www.linkedin.com/in/nada-mohamed-3b53211a5/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
         </div>
     </footer>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>

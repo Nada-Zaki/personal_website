@@ -19,8 +19,9 @@ header {
     align-items: center;
     background-color: #f0f0f0;
     width: 100%;
-    padding: 10px 150px;
+    padding: 0.8em 3em;
     position: fixed;
+    z-index: 10;
 }
 
 .logo {
@@ -36,16 +37,18 @@ header {
     color: var(--main-blue);
     font-weight: 400;
     font-size: 1.1em;
-    padding-left: 20px;
+    margin-left: 1.2em;
 }
 
 .navigation a:hover {
-    color: #601cfc;
+    color: #0a49f6;
+    border-bottom: 1px solid #0a49f6;
 }
 
 section {
-    padding: 30px 150px;
+    padding: 1.3em 2em;
     min-height: 100vh;
+    background-color: var(--main-background);
 }
 
 .main {
@@ -56,10 +59,17 @@ section {
     background-color: var(--main-background);
 }
 
+.main img {
+    width: 300px;
+    height: auto;
+    opacity: 0;
+}
+
 .main h2 {
     color: #f0f0f0;
     font-size: 1.1em;
     font-weight: 500;
+    opacity: 0;
 }
 
 .main h2 span {
@@ -76,6 +86,15 @@ section {
     font-weight: 700;
     letter-spacing: 1px;
     margin-bottom: 15px;
+    opacity: 0;
+}
+
+.main .about {
+    color: #f0f0f0;
+    max-width: 80%;
+    font-size: 1em;
+    font-weight: 200;
+    opacity: 0;
 }
 
 .main-btn {
@@ -91,6 +110,7 @@ section {
     margin-top: 20px;
     margin-bottom: 40px;
     transition: 0.7s;
+    opacity: 0;
 }
 
 .main-btn:hover {
@@ -98,10 +118,27 @@ section {
     transform: scale(1.1);
 }
 
-.social-icons a{
+.social-icons {
+    opacity: 0;
+}
+
+.social-icons a {
     color: #fff;
     font-size: 1.5em;
     padding-right: 20px;
+}
+
+.social-icons a:hover {
+    color: #0a49f6;
+}
+
+.animated {
+    animation: fadeInRight 1s;
+    -webkit-animation: fadeInRight 1s;
+    -moz-animation: fadeInRight 1s;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
 }
 
 .title {
@@ -115,15 +152,16 @@ section {
 
 .content {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.card {
+.projects .card {
     width: 18em;
     margin: 10px;
     padding-bottom: 10px;
+    position: relative;
+    overflow: hidden;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -132,17 +170,50 @@ section {
     box-shadow: 0 5px 15px rgba(1 1 1 / 15%);
     border-radius: 15px;
     transition: 0.7s ease;
+    opacity: 0;
 }
 
-.card:hover {
-    transform: scale(1.1);
+.projects .card::before {
+    content: "";
+    background: #02021f;
+    opacity: 0.7;
+    position: absolute;
+    width: 100%;
+    height: 0;
+    transition: 0.4s ease-in-out;
 }
 
-.card h3 {
+.projects .card:hover::before {
+    height: 100%;
+}
+
+.projects .card .icons {
+    position: absolute;
+    text-align: center;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.5s ease-in-out;
+    opacity: 0;
+    width: 100%;
+}
+
+.projects .card .icons a {
+    margin: 1rem;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fff;
+}
+
+.projects .card:hover .icons {
+    top: 85%;
+    opacity: 1;
+}
+
+.projects .card h3 {
     text-transform: uppercase;
     font-weight: 800;
 }
-
 
 .projects .card img {
     width: 100%;
@@ -153,38 +224,142 @@ section {
     margin: 10px;
 }
 
-.more_details {
-    text-decoration: none;
-    color: var(--main-blue);
-    text-transform: uppercase;
-    font-weight: 600;
-}
-
-.more_details:hover {
-    color: #601cfc;
-}
-
-.contact {
+.skills {
     background-color: var(--main-background);
+    color: #fff;
 }
 
-.contact .card {
-    background-color: #fff;
-    min-height: 15em;
+.skills img {
+    width: 4em;
+    height: auto;
 }
 
-.contact .icon {
+.skill-container {
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    width: 20%;
+    border-radius: 5px;
+}
+
+.html {
+    box-shadow: 0 4px 5px 1px #eb7f04;
+}
+
+.css {
+    box-shadow: 0 4px 5px 1px #0303d0;
+}
+
+.bootstrap {
+    box-shadow: 0 4px 5px 1px #6b67e5;
+}
+
+.js {
+    box-shadow: 0 4px 5px 1px #dada02;
+}
+
+.git {
+    box-shadow: 0 4px 5px 1px #e73030;
+}
+
+.react {
+    box-shadow: 0 4px 5px 1px #64caec;
+}
+
+.redux {
+    box-shadow: 0 4px 5px 1px #ac1ad4;
+}
+
+.node {
+    box-shadow: 0 4px 5px 1px #85f485;
+}
+
+.express {
+    box-shadow: 0 4px 5px 1px #615d5de9;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-evenly;
+    color: #f0f0f0;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+}
+
+.contact-info i {
     color: var(--main-blue);
-    font-size: 3em;
+    font-size: 1.3em;
+    margin-right: 10px;
 }
 
-
-.contact .info h3 {
-    font-size: 0.9em;
+.contact-info p {
+    margin-top: 30px;
+    font-size: 1em;
 }
 
-.contact .info p {
-    font-size: 1.1em;
+.contact-info .social-icons {
+    margin: 30px 0 10px;
+    opacity: 1;
+}
+
+.contact-info .social-icons i:hover {
+    color: #f0f0f0;
+}
+
+.contact-info .btn {
+    font-size: 1em;
+    padding: 0.5em 1.3em;
+    width: 80%;
+    border-radius: 7px;
+    text-align: center;
+    opacity: 1;
+}
+
+.form-container {
+    width: 40%;
+    opacity: 0;
+}
+
+.contact form {
+    width: 100%;
+}
+
+.contact input, textarea {
+    width: 100%;
+    display: block;
+    border: 0;
+    outline: none;
+    background-color: #262626;
+    color: #f0f0f0;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 5px;
+}
+
+.contact input[type='submit'] {
+    display: block;
+    cursor: pointer;
+    background-color: var(--main-blue);
+    color: #fff;
+    text-align: center;
+    width: 40%;
+    font-size: 1em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 7px;
+    padding: 0.5em 1.3em;
+    margin-top: 20px;
+    transition: 0.7s;
+}
+
+.contact input[type='submit']:hover {
+    background-color: #0a49f6;
+    transform: scale(1.1);
 }
 
 footer {
@@ -209,73 +384,112 @@ footer p span {
     color: var(--main-blue);
 }
 
-@media (max-width:900px) {
-    body {
-        font-size: 14px;
-    }
 
-    header {
-        padding: 10px 20px;
-    }
 
-    .logo {
-        font-size: 1.3em;
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translate3d(-30%,-30%,0);
+        -webkit-transform: translate3d(-30%,-30%,0);
+        -moz-transform: translate3d(-30%,-30%,0);
+        -ms-transform: translate3d(-30%,-30%,0);
+        -o-transform: translate3d(-30%,-30%,0);
     }
-
-    .card {
-        width: 25em;
-    }
-
-    .card h3 {
-        padding-top: 1em;
+    to {
+        opacity: 1;
+        transform: none;
+        -webkit-transform: none;
+        -moz-transform: none;
+        -ms-transform: none;
+        -o-transform: none;
     }
 }
 
-@media (max-width:645px) {
+@media (max-width:1200px) {
+    .main img {
+        width: 230px;
+    }
+    .skill-container {
+        width: 30%;
+    }
+}
+
+@media (max-width:970px) {
+    body {
+        font-size: 14px;
+    }
+    
+}
+
+@media (max-width:760px) {
     body {
         font-size: 12px;
     }
-
-    section {
-        padding: 20px 40px;
+    .projects .card {
+        width: 30em;
     }
-
-    .card {
-        width: 40em;
+    .main {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        padding-top: 100px;
+    }
+    .main .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .main h2 {
+        text-align: center;
     }
 
     .main h2 span {
         font-size: 2.5em;
     }
+    .main .about {
+        max-width: 80%;
+        text-align: center;
+    }
+    .skill-container {
+        width: 40%;
+    }
+    .contact-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+    .contact input[type='submit'], .btn {
+        align-self: center;
+        width: 100%;
+    }
+    .form-container {
+        width: 60%;
+    }
 }
 
-@media(max-width:400px) {
+@media(max-width:450px) {
+    body {
+        font-size: 9px;
+    }
     header {
-        padding: 5px 10px;
+        padding: 0.8em 1.5em;
+    }
+    .main h3 {
+        text-align: center;
     }
     .navigation a {
-        font-size: 0.9em;
+        margin-left: 7px;
     }
-
-    .logo {
-        font-size: 1.1em;
-    }
-
-    section {
-        padding: 10px 20px;
-    }
-
-    .card {
-        width: 60em;
-    }
-
-    .title {
-        font-size: 1.4em;
-    }
-
     .main h2 span {
         font-size: 1.8em;
     }
-
+    .skill-container {
+        width: 51%;
+    }
+    .form-container {
+        width: 80%;
+    }
 }
 
