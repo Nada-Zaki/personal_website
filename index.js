@@ -26,7 +26,6 @@ const addAnimation = () => {
             profileImg.style["-ms-animation-delay"] = `${delay}s`;
             profileImg.style["-o-animation-delay"] = `${delay}s`;
         } else {
-            console.log('else')
             for(let elem of content[i].children) {
                 elem.classList.remove("animated");
             }
@@ -34,23 +33,29 @@ const addAnimation = () => {
     }
     }
 
-
-const sendEmail = () => {
-    Email.send({
-        Host : "smtp.elasticemail.com",
-        Username : "username",
-        Password : "password",
-        To : 'them@website.com',
-        From : "you@isp.com",
-        Subject : "This is the subject",
-        Body : "And this is the body"
-    }).then(
-      message => alert(message)
-    );
-}
-
 document.addEventListener("DOMContentLoaded", addAnimation)
 
 window.addEventListener("scroll", addAnimation);
+
+document.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const submitBtn = document.querySelector('.contact button');
+    submitBtn.innerHTML = 'Submitting...';
+	const response = await fetch('https://email-sender-api-kohl.vercel.app/contact', {
+		method: 'POST',
+		body: JSON.stringify(Object.fromEntries(new FormData(event.target))),
+        headers: {
+			'Content-type': 'application/json; charset=UTF-8'
+		}
+	});
+    submitBtn.innerHTML = 'Submit';
+    event.target.reset();
+    if (response.ok) {
+        alert('Message sent sucessfully');
+    } else {
+        console.warn('Failed to send message');
+    }  
+	});
+
 
 
