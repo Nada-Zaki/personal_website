@@ -2,6 +2,7 @@
 
 :root {
     --main-blue: #3a6cf4;
+    --main-white: #f0f0f0;
     --main-background: #02021f;
 }
 
@@ -17,7 +18,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #f0f0f0;
+    background-color: var(--main-white);
     width: 100%;
     padding: 0.8em 3em;
     position: fixed;
@@ -66,7 +67,7 @@ section {
 }
 
 .main h2 {
-    color: #f0f0f0;
+    color: var(--main-white);
     font-size: 1.1em;
     font-weight: 500;
     opacity: 0;
@@ -81,7 +82,7 @@ section {
 }
 
 .main h3 {
-    color: #f0f0f0;
+    color: var(--main-white);
     font-size: 1.3em;
     font-weight: 700;
     letter-spacing: 1px;
@@ -90,27 +91,35 @@ section {
 }
 
 .main .about {
-    color: #f0f0f0;
+    color: var(--main-white);
     max-width: 80%;
     font-size: 1em;
     font-weight: 200;
     opacity: 0;
 }
 
-.main-btn {
+a {
     text-decoration: none;
-    color: #fff;
+}
+
+.main a {
+    opacity: 0;
+}
+
+.main-btn {
+    color: var(--main-white);
     background-color: var(--main-blue);
     font-size: 1.1em;
     font-weight: 600;
+    text-align: center;
     letter-spacing: 1px;
-    border-radius: 15px;
+    border-radius: 7px;
     display: inline-block;
+    cursor: pointer;
     padding: 0.8em 1.8em;
-    margin-top: 20px;
-    margin-bottom: 40px;
+    margin-top: 1.2em;
+    margin-bottom: 2.4em;
     transition: 0.7s;
-    opacity: 0;
 }
 
 .main-btn:hover {
@@ -123,7 +132,7 @@ section {
 }
 
 .social-icons a {
-    color: #fff;
+    color: var(--main-white);
     font-size: 1.5em;
     padding-right: 20px;
 }
@@ -166,7 +175,7 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    background-color: #fff;
+    background-color: var(--main-white);
     box-shadow: 0 5px 15px rgba(1 1 1 / 15%);
     border-radius: 15px;
     transition: 0.7s ease;
@@ -202,7 +211,7 @@ section {
     margin: 1rem;
     font-size: 2rem;
     font-weight: 800;
-    color: #fff;
+    color: var(--main-white);
 }
 
 .projects .card:hover .icons {
@@ -225,8 +234,7 @@ section {
 }
 
 .skills {
-    background-color: var(--main-background);
-    color: #fff;
+    color: var(--main-white);
 }
 
 .skills img {
@@ -281,7 +289,7 @@ section {
 .contact-container {
     display: flex;
     justify-content: space-evenly;
-    color: #f0f0f0;
+    color: var(--main-white);
 }
 
 .contact-info {
@@ -308,16 +316,14 @@ section {
 }
 
 .contact-info .social-icons i:hover {
-    color: #f0f0f0;
+    color: var(--main-white);
 }
 
 .contact-info .btn {
     font-size: 1em;
     padding: 0.5em 1.3em;
     width: 80%;
-    border-radius: 7px;
-    text-align: center;
-    opacity: 1;
+    
 }
 
 .form-container {
@@ -335,29 +341,23 @@ section {
     border: 0;
     outline: none;
     background-color: #262626;
-    color: #f0f0f0;
+    color: var(--main-white);
     padding: 15px;
     margin: 15px 0;
     border-radius: 5px;
 }
 
 .contact button {
-    display: block;
-    cursor: pointer;
-    background-color: var(--main-blue);
-    color: #fff;
-    text-align: center;
     width: 40%;
-    font-size: 1em;
-    font-weight: 600;
-    letter-spacing: 1px;
-    border-radius: 7px;
-    padding: 0.6em 1.3em;
-    margin-top: 20px;
-    transition: 0.7s;
 }
 
-.contact button:hover {
+.contact .btn {
+    font-size: 1em;
+    font-weight: 600;
+    padding: 0.6em 1.3em;
+}
+
+.contact .btn:hover {
     background-color: #0a49f6;
     transform: scale(1.1);
 }
@@ -418,7 +418,6 @@ footer p span {
     body {
         font-size: 14px;
     }
-    
 }
 
 @media (max-width:760px) {
@@ -460,7 +459,7 @@ footer p span {
         align-items: center;
         gap: 20px;
     }
-    .contact button, .btn {
+    .contact .btn {
         align-self: center;
         width: 100%;
         padding: 1em 1.3em;
