@@ -256,7 +256,7 @@ a {
     box-shadow: 0 4px 5px 1px #eb7f04;
 }
 
-.css {
+.css, .ts, .azure {
     box-shadow: 0 4px 5px 1px #0303d0;
 }
 
@@ -284,7 +284,7 @@ a {
     box-shadow: 0 4px 5px 1px #85f485;
 }
 
-.express {
+.express, .next {
     box-shadow: 0 4px 5px 1px #615d5de9;
 }
 
